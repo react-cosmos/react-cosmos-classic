@@ -27,7 +27,7 @@
   </a>
 </p>
 
-> **[Cosmos 4.8 — the version that keeps on giving](https://medium.com/@skidding/cosmos-4-8-the-version-that-keeps-on-giving-746d6265f81d)** (Cosmos Next has new exciting features) 🎉
+> **Important: This repository hosts Cosmos Classic, which has entered maintenance mode.** You can continue to use Cosmos Classic indefinitely. If you want to get on board with a newer platform, however, or if you're just getting started: [**Check out Cosmos Next**](https://github.com/react-cosmos/react-cosmos-classic).
 
 Cosmos scans your project for components and enables you to:
 
