@@ -6,11 +6,11 @@
   "license": "MIT",
   "scripts": {
     "build-dll": "../../node_modules/.bin/webpack --config webpack.vendor.config.js",
-    "start": "yarn run build-dll && cosmos"
+    "start": "yarn run build-dll && cosmos-clasic"
   },
   "dependencies": {
     "moment": "^2.24.0",
-    "react-cosmos": "^4.8.1"
+    "react-cosmos-classic": "^4.8.1"
   },
   "devDependencies": {
     "add-asset-html-webpack-plugin": "^3.1.3"

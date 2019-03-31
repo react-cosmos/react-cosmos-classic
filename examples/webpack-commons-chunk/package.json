@@ -5,11 +5,11 @@
   "repository": "https://github.com/react-cosmos/react-cosmos/tree/master/examples",
   "license": "MIT",
   "scripts": {
-    "start": "cosmos"
+    "start": "cosmos-classic"
   },
   "dependencies": {
     "moment": "^2.24.0",
-    "react-cosmos": "^4.8.1"
+    "react-cosmos-classic": "^4.8.1"
   },
   "private": true
 }

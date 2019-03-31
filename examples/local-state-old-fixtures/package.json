@@ -5,10 +5,10 @@
   "repository": "https://github.com/react-cosmos/react-cosmos/tree/master/examples",
   "license": "MIT",
   "scripts": {
-    "start": "cosmos"
+    "start": "cosmos-classic"
   },
   "dependencies": {
-    "react-cosmos": "^4.8.1"
+    "react-cosmos-classic": "^4.8.1"
   },
   "private": true
 }
