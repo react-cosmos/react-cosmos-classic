@@ -34,9 +34,9 @@
     "socket.io-client": "^2.2.0"
   },
   "bin": {
-    "cosmos-classic": "./bin/cosmos.js",
-    "cosmos-classic-export": "./bin/cosmos-export.js",
-    "cosmos-classic-native": "./bin/cosmos-native.js",
+    "cosmos-classic": "./bin/cosmos-classic.js",
+    "cosmos-classic-export": "./bin/cosmos-classic-export.js",
+    "cosmos-classic-native": "./bin/cosmos-classic-native.js",
     "print-fixture-files": "./bin/print-fixture-files.js"
   }
 }
