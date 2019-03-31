@@ -13,7 +13,6 @@ import {
   slash
 } from 'react-cosmos-shared/server';
 import io from 'socket.io-client';
-import { replaceKeys } from 'react-cosmos-shared2/util';
 import { startServer } from '../start';
 
 const mockRootPath = slash(__dirname, '__fsmocks__');
@@ -61,9 +60,7 @@ it('serves index.html on / route with template vars replaced', async () => {
     projectKey: mockRootPath
   };
   expect(res).toEqual(
-    replaceKeys(source, {
-      __PLAYGROUND_OPTS__: JSON.stringify(playgroundOpts)
-    })
+    source.replace('__PLAYGROUND_OPTS__', JSON.stringify(playgroundOpts))
   );
 });
 

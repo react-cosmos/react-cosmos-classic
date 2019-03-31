@@ -6,7 +6,6 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import request from 'request-promise-native';
-import { replaceKeys } from 'react-cosmos-shared2/util';
 import { startServer } from '../../start';
 
 const mockRootPath = __dirname;
@@ -48,8 +47,9 @@ it('serves index.html on / route with template vars replaced', async () => {
   );
 
   expect(res).toEqual(
-    replaceKeys(source, {
-      __PLAYGROUND_OPTS__: JSON.stringify({
+    source.replace(
+      '__PLAYGROUND_OPTS__',
+      JSON.stringify({
         platform: 'web',
         projectKey: mockRootPath,
         loaderUri: '/static/_loader.html',
@@ -58,7 +58,7 @@ it('serves index.html on / route with template vars replaced', async () => {
           'html-webpack-plugin': true
         }
       })
-    })
+    )
   );
 });
 

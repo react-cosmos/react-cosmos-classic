@@ -18,7 +18,6 @@ import { CRA_COSMOS_CONFIG } from './config-templates';
 import type { Config } from 'react-cosmos-flow/config';
 
 const defaults = {
-  next: false,
   rootPath: '.',
   fileMatch: defaultFileMatch,
   fileMatchIgnore: defaultFileMatchIgnore,

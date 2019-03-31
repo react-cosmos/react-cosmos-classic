@@ -17,11 +17,7 @@ script:
   - yarn link-entries src
   - yarn flow --retries 12
   - yarn lint
-  - yarn test:ts:unit --maxWorkers=2
-  - yarn codecov
-  # TS source code cannot be ran by Babel-powered test suite
-  - yarn link-entries dist react-cosmos-shared2 react-cosmos-fixture
-  - yarn test:unit --maxWorkers=2
+  - yarn test:unit --maxWorkers=2 --coverage
   - yarn codecov
   # Test build
   - yarn link-entries dist

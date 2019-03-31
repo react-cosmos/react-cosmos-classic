@@ -4,11 +4,7 @@ import path from 'path';
 import fs from 'fs-extra';
 import { silent as silentImport } from 'import-from';
 import { getCosmosConfig } from 'react-cosmos-config';
-import {
-  getPlaygroundHtml,
-  getPlaygroundHtmlNext
-} from '../shared/playground-html';
-import { getPlaygroundConfig } from '../shared/config-next';
+import { getPlaygroundHtml } from '../shared/playground-html';
 import enhanceWebpackConfig from './webpack/enhance-webpack-config';
 import { getUserWebpackConfig } from './webpack/user-webpack-config';
 import { getPlaygroundOpts } from './playground-opts';
@@ -29,14 +25,7 @@ const exportPlaygroundFiles = (cosmosConfig, outputPath) => {
   );
 
   const playgroundOpts = getPlaygroundOpts(cosmosConfig);
-  const playgroundHtml = next
-    ? getPlaygroundHtmlNext(
-        getPlaygroundConfig({
-          playgroundOpts,
-          devServerOn: false
-        })
-      )
-    : getPlaygroundHtml(playgroundOpts);
+  const playgroundHtml = getPlaygroundHtml(playgroundOpts);
   fs.writeFileSync(`${outputPath}/index.html`, playgroundHtml);
 };
 

@@ -30,7 +30,6 @@ export default function enhanceWebpackConfig({
 }: Args) {
   const cosmosConfig: Config = getCosmosConfig();
   const {
-    next,
     rootPath,
     containerQuerySelector,
     hot,
@@ -50,15 +49,10 @@ export default function enhanceWebpackConfig({
 
   const rules = [
     ...getExistingRules(webpackConfig),
-    next
-      ? {
-          loader: require.resolve('./embed-modules-webpack-loader-next'),
-          include: require.resolve('../../../client/next/userModules')
-        }
-      : {
-          loader: require.resolve('./embed-modules-webpack-loader'),
-          include: require.resolve('../../../client/user-modules')
-        }
+    {
+      loader: require.resolve('./embed-modules-webpack-loader'),
+      include: require.resolve('../../../client/user-modules')
+    }
   ];
 
   let plugins = [
@@ -111,16 +105,10 @@ export default function enhanceWebpackConfig({
   };
 }
 
-function getEntry({ next, globalImports, hot }, shouldExport) {
+function getEntry({ globalImports, hot }, shouldExport) {
   // The React devtools hook needs to be imported before any other module which
   // might import React
-  let entry = [resolveClientPath('react-devtools-hook')];
-
-  // Global imports are injected in the user modules file in Cosmos Next, to
-  // make them hot reload-able
-  if (!next) {
-    entry = [...entry, ...globalImports];
-  }
+  let entry = [resolveClientPath('react-devtools-hook'), ...globalImports];
 
   if (hot && !shouldExport) {
     entry = [
@@ -131,7 +119,7 @@ function getEntry({ next, globalImports, hot }, shouldExport) {
     ];
   }
 
-  return [...entry, resolveClientPath(next ? 'next' : 'loader-entry')];
+  return [...entry, resolveClientPath('loader-entry')];
 }
 
 function resolveClientPath(p) {

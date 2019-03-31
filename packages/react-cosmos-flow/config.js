@@ -14,7 +14,6 @@ type AdvancedHttpProxyConfig = { [contextKey: string]: string | {} };
 export type HttpProxyConfig = BasicHttpProxyConfig | AdvancedHttpProxyConfig;
 
 export type Config = {
-  next: boolean,
   rootPath: string,
   fileMatch: Array<string>,
   fileMatchIgnore: string,

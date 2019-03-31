@@ -6,9 +6,8 @@ import promisify from 'util.promisify';
 import express from 'express';
 // IDEA: Maybe replace react-dev-utils with https://github.com/yyx990803/launch-editor
 import launchEditor from 'react-dev-utils/launchEditor';
-import { getPlaygroundHtml, getPlaygroundHtmlNext } from './playground-html';
+import { getPlaygroundHtml } from './playground-html';
 import { setupHttpProxy } from './http-proxy';
-import { getPlaygroundConfig } from './config-next';
 
 import type { Config } from 'react-cosmos-flow/config';
 import type { PlaygroundOpts } from 'react-cosmos-flow/playground';
@@ -20,31 +19,20 @@ export function createServerApp({
   cosmosConfig: Config,
   playgroundOpts: PlaygroundOpts
 }) {
-  const { next, httpProxy } = cosmosConfig;
+  const { httpProxy } = cosmosConfig;
   const app = express();
 
   if (httpProxy) {
     setupHttpProxy(app, httpProxy);
   }
 
-  const playgroundHtml = next
-    ? getPlaygroundHtmlNext(
-        getPlaygroundConfig({
-          playgroundOpts,
-          devServerOn: true
-        })
-      )
-    : getPlaygroundHtml(playgroundOpts);
+  const playgroundHtml = getPlaygroundHtml(playgroundOpts);
   app.get('/', (req: express$Request, res: express$Response) => {
     res.send(playgroundHtml);
   });
 
   app.get('/_playground.js', (req: express$Request, res: express$Response) => {
-    res.sendFile(
-      require.resolve(
-        next ? 'react-cosmos-playground2' : 'react-cosmos-playground'
-      )
-    );
+    res.sendFile(require.resolve('react-cosmos-playground'));
   });
 
   app.get('/_cosmos.ico', (req: express$Request, res: express$Response) => {
