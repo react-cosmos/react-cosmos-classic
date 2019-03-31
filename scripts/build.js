@@ -6,9 +6,7 @@ import { bold, italic } from 'chalk';
 import cpy from 'cpy';
 import {
   AS_IS_PACKAGES,
-  SHARED_TS_PACKAGE,
   getBabelNodePackages,
-  getTsNodePackages,
   getBrowserPackages,
   getFormattedPackageList,
   getUnnamedArg,
@@ -25,15 +23,9 @@ const watch = getBoolArg('watch');
 run();
 
 async function run() {
-  const tsNodePackages = await getTsNodePackages();
   const babelNodePackages = await getBabelNodePackages();
   const browserPackages = await getBrowserPackages();
-  const buildablePackages = [
-    SHARED_TS_PACKAGE,
-    ...tsNodePackages,
-    ...babelNodePackages,
-    ...browserPackages
-  ];
+  const buildablePackages = [...babelNodePackages, ...browserPackages];
   const pkgName = getUnnamedArg();
 
   if (pkgName) {
@@ -65,12 +57,7 @@ async function run() {
       `${watch ? 'Build-watching' : 'Building'} ${bold(pkgName)}...\n`
     );
 
-    if (
-      pkgName === SHARED_TS_PACKAGE ||
-      tsNodePackages.indexOf(pkgName) !== -1
-    ) {
-      await buildTsPackage(pkgName);
-    } else if (babelNodePackages.indexOf(pkgName) !== -1) {
+    if (babelNodePackages.indexOf(pkgName) !== -1) {
       await buildNodePackage(pkgName);
     } else {
       await buildBrowserPackage(pkgName);
@@ -91,10 +78,6 @@ async function run() {
       return;
     }
 
-    stdout.write(`Building Node packages with TypeScript...\n`);
-    await buildTsPackage(SHARED_TS_PACKAGE);
-    await Promise.all(tsNodePackages.map(buildTsPackage));
-
     stdout.write(`Building Node packages with Babel...\n`);
     await Promise.all(babelNodePackages.map(buildNodePackage));
 
@@ -103,14 +86,6 @@ async function run() {
 
     stdout.write(`Built ${buildablePackages.length} packages successfully.\n`);
   }
-}
-
-async function buildTsPackage(pkgName) {
-  await runBuildTask({
-    pkgName,
-    cmd: 'tsc',
-    args: getTsCliArgs(pkgName)
-  });
 }
 
 async function buildNodePackage(pkgName) {
@@ -171,16 +146,6 @@ async function runBuildTask({ pkgName, cmd, args, env = {} }: BuildTaskArgs) {
   return promise;
 }
 
-function getTsCliArgs(pkgName) {
-  let args = ['-b', `packages/${pkgName}/tsconfig.build.json`];
-
-  if (watch) {
-    args = [...args, '--watch'];
-  }
-
-  return args;
-}
-
 function getBabelCliArgs(pkgName) {
   let args = [
     `packages/${pkgName}/src`,
@@ -231,9 +196,9 @@ async function copyFlowDefs(pkgName) {
 }
 
 async function copyStaticAssets(pkgName) {
-  if (pkgName === 'react-cosmos') {
+  if (pkgName === 'react-cosmos-classic') {
     return cpy('src/server/shared/static/**', `dist/server/shared/static`, {
-      cwd: join(__dirname, `../packages/react-cosmos`),
+      cwd: join(__dirname, `../packages/react-cosmos-classic`),
       parents: false
     });
   }

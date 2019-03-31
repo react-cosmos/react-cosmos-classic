@@ -2,11 +2,9 @@
 
 import { bold } from 'chalk';
 import {
-  SHARED_TS_PACKAGE,
   globAsync,
   readFileAsync,
   writeFileAsync,
-  getTsNodePackages,
   getBabelNodePackages,
   getFormattedPackageList,
   getUnnamedArg,
@@ -22,13 +20,11 @@ type TargetDir = typeof SRC_DIR | typeof DIST_DIR;
 run();
 
 async function run() {
-  const tsPackages = await getTsNodePackages();
   const nodePackages = await getBabelNodePackages();
-  const packages = [SHARED_TS_PACKAGE, ...tsPackages, ...nodePackages];
 
   try {
     const targetDir = getTargetDir();
-    const targetPackages = getTargetPackages(packages);
+    const targetPackages = getTargetPackages(nodePackages);
 
     const entryPoints = await getPackageEntryPoints(targetPackages);
     await Promise.all(

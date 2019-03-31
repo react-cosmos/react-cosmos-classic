@@ -2,7 +2,7 @@
   "name": "react-cosmos-config",
   "version": "4.8.0-alpha.0",
   "description": "Reads user cosmos config and extends defaults",
-  "repository": "https://github.com/react-cosmos/react-cosmos/tree/master/packages/react-cosmos-config",
+  "repository": "https://github.com/react-cosmos/react-cosmos-classic/tree/master/packages/react-cosmos-config",
   "license": "MIT",
   "main": "index.js",
   "dependencies": {

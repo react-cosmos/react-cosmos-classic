@@ -56,9 +56,7 @@ module.exports = {
     '!**/*.{fixture,jsxfixture}.js',
     '!**/cosmos.decorator.js',
     '!**/testHelpers/**',
-    '!**/react-cosmos-voyager/src/use-cases/**',
-    '!**/react-cosmos/src/client/next/**',
-    '!**/react-cosmos/src/server/web/webpack/embed-modules-webpack-loader-next.js'
+    '!**/react-cosmos-voyager/src/use-cases/**'
   ],
   coverageDirectory: '<rootDir>/coverage',
   coverageReporters: ['lcov', 'text']

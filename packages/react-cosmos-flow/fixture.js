@@ -12,7 +12,7 @@ export type FixtureType<P: {}> = {
 };
 
 // Deprecated. Use this instead:
-//  import { createFixture } from 'react-cosmos'
+//  import { createFixture } from 'react-cosmos-classic'
 export function createFixture<P: {}, F: FixtureType<P>>(fixture: F) {
   return fixture;
 }

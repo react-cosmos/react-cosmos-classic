@@ -51,8 +51,8 @@ module.exports = {
       '.jest/config{,.ts}.js',
       'scripts/**/*.js',
       'packages/{react-cosmos-config,react-cosmos-scripts,react-cosmos-telescope}/src/**/*.js',
-      'packages/{react-cosmos-shared,react-cosmos,react-cosmos-voyager2}/src/server/**/*.js',
-      'packages/react-cosmos/bin/**/*.js',
+      'packages/{react-cosmos-shared,react-cosmos-classic,react-cosmos-voyager2}/src/server/**/*.js',
+      'packages/react-cosmos-classic/bin/**/*.js',
       'packages/react-cosmos-voyager/scripts/generate-use-cases.js',
       'packages/react-cosmos-playground/webpack.config.js',
       'examples/apollo/server.js',
@@ -66,7 +66,7 @@ module.exports = {
         'react-querystring-router',
         ...browserProxies
       ].join(',')}}/src/**/*.js`,
-      'packages/{react-cosmos,react-cosmos-voyager2}/src/client/**/*.js',
+      'packages/{react-cosmos-classic,react-cosmos-voyager2}/src/client/**/*.js',
       'packages/react-cosmos-loader/src/dom/**/*.js'
     ]),
     jestEnv([
@@ -78,7 +78,7 @@ module.exports = {
       'packages/react-cosmos-telescope/src/**/*.js'
     ]),
     cypressEnv(['cypress/**/*.js']),
-    userBuildEnv(['packages/react-cosmos/src/client/**/*.js'])
+    userBuildEnv(['packages/react-cosmos-classic/src/client/**/*.js'])
   ]
 };
 

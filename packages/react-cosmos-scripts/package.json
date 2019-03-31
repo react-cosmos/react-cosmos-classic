@@ -2,7 +2,7 @@
   "name": "react-cosmos-scripts",
   "version": "4.8.0-alpha.0",
   "description": "Scripts for Cosmos-related bidniss",
-  "repository": "https://github.com/react-cosmos/react-cosmos/tree/master/packages/react-cosmos-scripts",
+  "repository": "https://github.com/react-cosmos/react-cosmos-classic/tree/master/packages/react-cosmos-scripts",
   "license": "MIT",
   "scripts": {},
   "dependencies": {

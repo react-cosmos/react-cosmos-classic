@@ -7,11 +7,11 @@
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.org/react-cosmos/react-cosmos">
-    <img alt="Build" src="https://travis-ci.org/react-cosmos/react-cosmos.svg?branch=master">
+  <a href="https://travis-ci.org/react-cosmos/react-cosmos-classic">
+    <img alt="Build" src="https://travis-ci.org/react-cosmos/react-cosmos-classic.svg?branch=master">
   </a>
-  <a href="https://codecov.io/gh/react-cosmos/react-cosmos">
-    <img alt="Coverage" src="https://codecov.io/gh/react-cosmos/react-cosmos/branch/master/graph/badge.svg">
+  <a href="https://codecov.io/gh/react-cosmos/react-cosmos-classic">
+    <img alt="Coverage" src="https://codecov.io/gh/react-cosmos/react-cosmos-classic/branch/master/graph/badge.svg">
   </a>
   <a href="https://twitter.com/ReactCosmos">
     <img alt="@ReactCosmos" src="https://img.shields.io/twitter/follow/ReactCosmos.svg?style=flat&label=Follow">
@@ -27,7 +27,7 @@
   </a>
 </p>
 
-> **[Cosmos 4.8 — the version that keeps on giving](https://medium.com/@skidding/cosmos-4-8-the-version-that-keeps-on-giving-746d6265f81d)** (Cosmos Next has new exciting features) 🎉
+> **⚠️ This repository hosts Cosmos Classic, which has entered maintenance mode.** You can continue to use Cosmos Classic indefinitely. If you want to get on board with a newer platform, however, or if you're just getting started, [**check out Cosmos Next**](https://github.com/react-cosmos/react-cosmos).
 
 Cosmos scans your project for components and enables you to:
 
@@ -943,7 +943,6 @@ module.exports = {
 };
 ```
 
-
 #### Github Pages and Jekyll
 
 You can publish Cosmos publicly using Github pages by [using `cosmos-export`](#exporting). Commit the exported files to a `/docs/` folder in the root of your project and you should be good to go.
@@ -1352,7 +1351,7 @@ Next steps:
 > Note: The `createFixture` helper only type checks _fixture.props_. It's not able to validate other fixture fields that map to custom proxies, but it still provides great value in many cases.
 
 ```js
-import { createFixture } from 'react-cosmos';
+import { createFixture } from 'react-cosmos-classic';
 import { Button } from '.';
 
 export default createFixture({

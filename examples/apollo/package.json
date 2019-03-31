@@ -2,11 +2,11 @@
   "name": "react-cosmos-apollo-example",
   "version": "4.8.1",
   "description": "Example of mocking the Apollo Client",
-  "repository": "https://github.com/react-cosmos/react-cosmos/tree/master/examples",
+  "repository": "https://github.com/react-cosmos/react-cosmos-classic/tree/master/examples",
   "license": "MIT",
   "scripts": {
     "start:server": "babel-node server.js",
-    "start": "cosmos"
+    "start": "cosmos-classic"
   },
   "dependencies": {
     "apollo-server-express": "^1.3.6",
@@ -18,7 +18,7 @@
     "graphql-tools": "^3.1.1",
     "lodash": "^4.17.11",
     "react-apollo": "^2.2.4",
-    "react-cosmos": "^4.8.1",
+    "react-cosmos-classic": "^4.8.1",
     "react-cosmos-apollo-proxy": "^4.8.0-alpha.0",
     "react-cosmos-shared": "^4.8.0-alpha.0"
   },
