@@ -7,11 +7,11 @@
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.org/react-cosmos/react-cosmos">
-    <img alt="Build" src="https://travis-ci.org/react-cosmos/react-cosmos.svg?branch=master">
+  <a href="https://travis-ci.org/react-cosmos/react-cosmos-classic">
+    <img alt="Build" src="https://travis-ci.org/react-cosmos/react-cosmos-classic.svg?branch=master">
   </a>
-  <a href="https://codecov.io/gh/react-cosmos/react-cosmos">
-    <img alt="Coverage" src="https://codecov.io/gh/react-cosmos/react-cosmos/branch/master/graph/badge.svg">
+  <a href="https://codecov.io/gh/react-cosmos/react-cosmos-classic">
+    <img alt="Coverage" src="https://codecov.io/gh/react-cosmos/react-cosmos-classic/branch/master/graph/badge.svg">
   </a>
   <a href="https://twitter.com/ReactCosmos">
     <img alt="@ReactCosmos" src="https://img.shields.io/twitter/follow/ReactCosmos.svg?style=flat&label=Follow">
@@ -942,7 +942,6 @@ module.exports = {
   proxiesPath: 'src/cosmos.proxies'
 };
 ```
-
 
 #### Github Pages and Jekyll
 
