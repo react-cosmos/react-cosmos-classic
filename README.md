@@ -27,7 +27,7 @@
   </a>
 </p>
 
-> **Important: This repository hosts Cosmos Classic, which has entered maintenance mode.** You can continue to use Cosmos Classic indefinitely. If you want to get on board with a newer platform, however, or if you're just getting started: [**Check out Cosmos Next**](https://github.com/react-cosmos/react-cosmos-classic).
+> **⚠️ This repository hosts Cosmos Classic, which has entered maintenance mode.** You can continue to use Cosmos Classic indefinitely. If you want to get on board with a newer platform, however, or if you're just getting started, [**check out Cosmos Next**](https://github.com/react-cosmos/react-cosmos).
 
 Cosmos scans your project for components and enables you to:
 
