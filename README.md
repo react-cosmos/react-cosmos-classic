@@ -1351,7 +1351,7 @@ Next steps:
 > Note: The `createFixture` helper only type checks _fixture.props_. It's not able to validate other fixture fields that map to custom proxies, but it still provides great value in many cases.
 
 ```js
-import { createFixture } from 'react-cosmos';
+import { createFixture } from 'react-cosmos-classic';
 import { Button } from '.';
 
 export default createFixture({

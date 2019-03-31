@@ -196,9 +196,9 @@ async function copyFlowDefs(pkgName) {
 }
 
 async function copyStaticAssets(pkgName) {
-  if (pkgName === 'react-cosmos') {
+  if (pkgName === 'react-cosmos-classic') {
     return cpy('src/server/shared/static/**', `dist/server/shared/static`, {
-      cwd: join(__dirname, `../packages/react-cosmos`),
+      cwd: join(__dirname, `../packages/react-cosmos-classic`),
       parents: false
     });
   }
