@@ -10,17 +10,13 @@ import { getUserWebpackConfig } from './webpack/user-webpack-config';
 import { getPlaygroundOpts } from './playground-opts';
 
 const exportPlaygroundFiles = (cosmosConfig, outputPath) => {
-  const { next } = cosmosConfig;
-
   fs.copySync(
     path.join(__dirname, '../shared/static/favicon.ico'),
     `${outputPath}/_cosmos.ico`
   );
 
   fs.copySync(
-    require.resolve(
-      next ? 'react-cosmos-playground2' : 'react-cosmos-playground'
-    ),
+    require.resolve('react-cosmos-playground'),
     `${outputPath}/_playground.js`
   );
 

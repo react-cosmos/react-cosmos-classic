@@ -4,7 +4,7 @@
     "packages/*",
     "examples/*"
   ],
-  "repository": "https://github.com/react-cosmos/react-cosmos",
+  "repository": "https://github.com/react-cosmos/react-cosmos-classic",
   "license": "MIT",
   "scripts": {
     "install-react": "yarn remove react react-dom && yarn add",

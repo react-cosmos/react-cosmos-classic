@@ -13,9 +13,7 @@ import {
   serveStaticDir,
   attachStackFrameEditorLauncher
 } from '../shared/server';
-import { attachSockets } from '../shared/socket';
 import { attachWebpack } from './webpack/attach-webpack';
-import openFilePlugin from './plugins/openFile';
 import { getPlaygroundOpts } from './playground-opts';
 
 export async function startServer() {
@@ -28,7 +26,7 @@ export async function startServer() {
   }
 
   const cosmosConfig = getCosmosConfig();
-  const { next, rootPath, publicUrl } = cosmosConfig;
+  const { rootPath, publicUrl } = cosmosConfig;
 
   if (cosmosConfig.proxies) {
     console.warn('[Cosmos] Warning: config.proxies is deprecated!');
@@ -50,7 +48,7 @@ export async function startServer() {
     cosmosConfig,
     playgroundOpts: getPlaygroundOpts(cosmosConfig)
   });
-  const { server, startServer, stopServer } = createServer(cosmosConfig, app);
+  const { startServer, stopServer } = createServer(cosmosConfig, app);
 
   const publicPath = getPublicPath(cosmosConfig, userWebpackConfig);
   if (publicPath) {
@@ -59,10 +57,6 @@ export async function startServer() {
 
   attachStackFrameEditorLauncher(app);
 
-  if (next) {
-    openFilePlugin({ app, cosmosConfig });
-  }
-
   const { onWebpackDone, stopWebpack } = attachWebpack({
     cosmosConfig,
     app,
@@ -70,13 +64,11 @@ export async function startServer() {
     userWebpackConfig
   });
 
-  const closeSockets = next ? attachSockets(server) : () => {};
   await startServer();
   await onWebpackDone;
 
   return async () => {
     await stopWebpack();
-    closeSockets();
     await stopServer();
   };
 }

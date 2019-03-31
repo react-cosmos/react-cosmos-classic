@@ -1,8 +1,8 @@
 {
-  "name": "react-cosmos",
+  "name": "react-cosmos-classic",
   "version": "4.8.1",
   "description": "CLI for running React Cosmos inside webpack-powered apps",
-  "repository": "https://github.com/react-cosmos/react-cosmos/tree/master/packages/react-cosmos",
+  "repository": "https://github.com/react-cosmos/react-cosmos/tree/master/packages/react-cosmos-classic",
   "license": "MIT",
   "main": "index.js",
   "dependencies": {
@@ -34,9 +34,9 @@
     "socket.io-client": "^2.2.0"
   },
   "bin": {
-    "cosmos": "./bin/cosmos.js",
-    "cosmos-export": "./bin/cosmos-export.js",
-    "cosmos-native": "./bin/cosmos-native.js",
+    "cosmos-classic": "./bin/cosmos.js",
+    "cosmos-classic-export": "./bin/cosmos-export.js",
+    "cosmos-classic-native": "./bin/cosmos-native.js",
     "print-fixture-files": "./bin/print-fixture-files.js"
   }
 }
