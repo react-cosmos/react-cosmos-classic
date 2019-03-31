@@ -2,7 +2,7 @@
   "name": "react-cosmos-test",
   "version": "4.8.0-alpha.0",
   "description": "APIs for testing Cosmos fixtures in headless environments",
-  "repository": "https://github.com/react-cosmos/react-cosmos/tree/master/packages/react-cosmos-test",
+  "repository": "https://github.com/react-cosmos/react-cosmos-classic/tree/master/packages/react-cosmos-test",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.3.1",

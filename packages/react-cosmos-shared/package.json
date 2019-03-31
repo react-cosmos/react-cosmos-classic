@@ -2,7 +2,7 @@
   "name": "react-cosmos-shared",
   "version": "4.8.0-alpha.0",
   "description": "Libs shared between React Cosmos packages",
-  "repository": "https://github.com/react-cosmos/react-cosmos/tree/master/packages/react-cosmos-shared",
+  "repository": "https://github.com/react-cosmos/react-cosmos-classic/tree/master/packages/react-cosmos-shared",
   "license": "MIT",
   "main": "index.js",
   "dependencies": {

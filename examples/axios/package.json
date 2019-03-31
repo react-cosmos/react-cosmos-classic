@@ -2,7 +2,7 @@
   "name": "react-cosmos-axios-example",
   "version": "4.8.1",
   "description": "Example of mocking Axios (XMLHttpRequest)",
-  "repository": "https://github.com/react-cosmos/react-cosmos/tree/master/examples",
+  "repository": "https://github.com/react-cosmos/react-cosmos-classic/tree/master/examples",
   "license": "MIT",
   "scripts": {
     "start": "cosmos-classic"

@@ -90,7 +90,7 @@ To understand `link-entries` better, see how it's used in the context of the [re
 
 #### Flow
 
-The Cosmos monorepo is typed using [Flow](https://github.com/facebook/flow). Most types, especially ones reused, are found in the [react-cosmos-flow](https://github.com/react-cosmos/react-cosmos/tree/e5ed43681969890d5d29bb32bdaab3630cce9ca5/packages/react-cosmos-flow) package. This package is useful in two ways:
+The Cosmos monorepo is typed using [Flow](https://github.com/facebook/flow). Most types, especially ones reused, are found in the [react-cosmos-flow](https://github.com/react-cosmos/react-cosmos-classic/tree/e5ed43681969890d5d29bb32bdaab3630cce9ca5/packages/react-cosmos-flow) package. This package is useful in two ways:
 
 - Cosmos packages can easily share types and import them using convenient `react-cosmos-flow/*` paths
 
@@ -112,7 +112,7 @@ Read about all event payloads and their order [here](docs/playground-loader.md).
 
 The `react-cosmos` CLI extends the user's webpack config or fallbacks to a default config, which automatically detects and includes the user's Babel and CSS loaders.
 
-The entry file of the resulting webpack config mounts `Loader` via `loaderConnect`, together with all the user components, fixtures and proxies. **The component and fixture paths are injected statically in the Loader bundle** via [embed-modules-webpack-loader.js](packages/react-cosmos/src/server/embed-modules-webpack-loader.js).
+The entry file of the resulting webpack config mounts `Loader` via `loaderConnect`, together with all the user components, fixtures and proxies. **The component and fixture paths are injected statically in the Loader bundle** via [embed-modules-webpack-loader.js](packages/react-cosmos-classic/src/server/embed-modules-webpack-loader.js).
 
 Using webpack-dev-middleware, the webpack config is attached to an Express server, which serves the Playground bundle at `/index.html` and the Loader bundle at `/_loader.html`. The server will also serve a static directory when the `publicPath` option is used.
 
