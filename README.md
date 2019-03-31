@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://travis-ci.org/react-cosmos/react-cosmos-classic">
-    <img alt="Build" src="https://travis-ci.org/react-cosmos/react-cosmos-classic.svg?branch=master">
+    <img alt="Build" src="https://travis-ci.com/react-cosmos/react-cosmos-classic.svg?branch=master">
   </a>
   <a href="https://codecov.io/gh/react-cosmos/react-cosmos-classic">
     <img alt="Coverage" src="https://codecov.io/gh/react-cosmos/react-cosmos-classic/branch/master/graph/badge.svg">
