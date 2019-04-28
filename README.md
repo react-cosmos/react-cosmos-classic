@@ -110,21 +110,21 @@ _Have a question or idea to share? See you on [Slack](https://join-react-cosmos.
 Install via npm
 
 ```bash
-npm install --save-dev react-cosmos
+npm install --save-dev react-cosmos-classic
 ```
 
 or Yarn
 
 ```bash
-yarn add --dev react-cosmos
+yarn add --dev react-cosmos-classic
 ```
 
 Add package.json scripts
 
 ```diff
 "scripts": {
-+  "cosmos": "cosmos",
-+  "cosmos:export": "cosmos-export"
++  "cosmos": "cosmos-classic",
++  "cosmos:export": "cosmos-classic-export"
 }
 ```
 
@@ -152,7 +152,7 @@ If something's wrong
 - Extend existing [webpack config](#custom-webpack-config)
 - See [popular integrations](#integration-with-popular-tools) (e.g. CRA or Next.js)
 - Extend your [config](#config)
-- Be kind and [report what went wrong](https://github.com/react-cosmos/react-cosmos/issues)
+- Be kind and [report what went wrong](https://github.com/react-cosmos/react-cosmos-classic/issues)
 
 ### Fixtures
 
@@ -897,7 +897,7 @@ _What proxy would you create to improve DX?_
 
 #### Create React App
 
-Add `react-cosmos` to dev dependencies and create `cosmos.config.js`.
+Add `react-cosmos-classic` to dev dependencies and create `cosmos.config.js`.
 
 ```js
 // cosmos.config.js
@@ -917,7 +917,7 @@ If you are using the `NODE_PATH` environment variable for absolute imports, make
 ```js
 // package.json
 "scripts": {
-  "cosmos": "NODE_PATH=./src cosmos"
+  "cosmos": "NODE_PATH=./src cosmos-classic"
 }
 ```
 
@@ -953,7 +953,7 @@ The solution is to put an empty `.nojekyll` file in your `/public/` folder. This
 
 #### Next.js
 
-Add `react-cosmos` to dev dependencies and create `cosmos.config.js`.
+Add `react-cosmos-classic` to dev dependencies and create `cosmos.config.js`.
 
 > Next.js apps run on both client & server, so compilation is done via Babel plugins instead of webpack loaders. This means we can rely on Cosmos' default webpack config.
 
@@ -980,7 +980,7 @@ _Next.js + Cosmos example: [Illustrated Algorithms](https://github.com/skidding/
 
 #### React Boilerplate
 
-Add `react-cosmos` to dev dependencies and create `cosmos.config.js`.
+Add `react-cosmos-classic` to dev dependencies and create `cosmos.config.js`.
 
 ```js
 // cosmos.config.js
@@ -993,7 +993,7 @@ module.exports = {
 
 #### React Redux Starter Kit
 
-Add `react-cosmos` to dev dependencies and create `cosmos.config.js`.
+Add `react-cosmos-classic` to dev dependencies and create `cosmos.config.js`.
 
 ```js
 // cosmos.config.js
@@ -1151,7 +1151,7 @@ Add this script and run `npm run cosmos:export` or `yarn cosmos:export`.
 
 ```diff
 "scripts": {
-+  "cosmos:export": "cosmos-export"
++  "cosmos:export": "cosmos-classic-export"
 }
 ```
 
