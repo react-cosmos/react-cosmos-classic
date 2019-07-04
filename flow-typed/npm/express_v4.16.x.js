@@ -1,8 +1,5 @@
-// flow-typed signature: cc24a4e737d9dfb8e1381c3bd4ebaa65
-// flow-typed version: d11eab7bb5/express_v4.16.x/flow_>=v0.32.x
-
-import type { Server } from 'http';
-import type { Socket } from 'net';
+// flow-typed signature: b647ddbcd7635eb058534a738410dbdb
+// flow-typed version: f55cb054df/express_v4.16.x/flow_>=v0.93.x
 
 declare type express$RouterOptions = {
   caseSensitive?: boolean,
@@ -24,7 +21,7 @@ declare class express$Request extends http$IncomingMessage
   baseUrl: string;
   body: mixed;
   cookies: { [cookie: string]: string };
-  connection: Socket;
+  connection: net$Socket;
   fresh: boolean;
   hostname: string;
   ip: string;
@@ -184,7 +181,7 @@ declare class express$Router extends express$Route {
   ): this;
   use(path: string, router: express$Router): this;
   handle(
-    req: http$IncomingMessage,
+    req: http$IncomingMessage<>,
     res: http$ServerResponse,
     next: express$NextFunction
   ): void;
@@ -198,7 +195,7 @@ declare class express$Router extends express$Route {
     ) => mixed
   ): void;
   (
-    req: http$IncomingMessage,
+    req: http$IncomingMessage<>,
     res: http$ServerResponse,
     next?: ?express$NextFunction
   ): void;
@@ -222,15 +219,15 @@ declare class express$Application extends express$Router
     hostname?: string,
     backlog?: number,
     callback?: (err?: ?Error) => mixed
-  ): ?Server;
+  ): ?http$Server;
   listen(
     port: number,
     hostname?: string,
     callback?: (err?: ?Error) => mixed
-  ): ?Server;
-  listen(port: number, callback?: (err?: ?Error) => mixed): ?Server;
-  listen(path: string, callback?: (err?: ?Error) => mixed): ?Server;
-  listen(handle: Object, callback?: (err?: ?Error) => mixed): ?Server;
+  ): ?http$Server;
+  listen(port: number, callback?: (err?: ?Error) => mixed): ?http$Server;
+  listen(path: string, callback?: (err?: ?Error) => mixed): ?http$Server;
+  listen(handle: Object, callback?: (err?: ?Error) => mixed): ?http$Server;
   disable(name: string): void;
   disabled(name: string): boolean;
   enable(name: string): express$Application;
@@ -247,13 +244,13 @@ declare class express$Application extends express$Router
     callback: express$RenderCallback
   ): void;
   handle(
-    req: http$IncomingMessage,
+    req: http$IncomingMessage<>,
     res: http$ServerResponse,
     next?: ?express$NextFunction
   ): void;
   // callable signature is not inherited
   (
-    req: http$IncomingMessage,
+    req: http$IncomingMessage<>,
     res: http$ServerResponse,
     next?: ?express$NextFunction
   ): void;
