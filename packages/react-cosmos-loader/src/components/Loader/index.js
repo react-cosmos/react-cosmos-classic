@@ -1,55 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { func, object, arrayOf } from 'prop-types';
 import createLinkedList from '@skidding/linked-list';
 import { createModuleType } from '../../utils/module-type';
 import { PropsProxy } from '../PropsProxy';
 
-export class Loader extends Component {
-  static propTypes = {
-    fixture: createModuleType(object).isRequired,
-    proxies: arrayOf(createModuleType(func)),
-    onComponentRef: func
-  };
+/**
+ * Loader for rendering React components in isolation.
+ *
+ * Renders components using fixtures and Proxy middleware. Initialized via
+ * props.
+ */
+const Loader = ({ fixture, proxies, onComponentRef, onFixtureUpdate }) => {
+  const firstProxy = createLinkedList([...proxies, PropsProxy]);
 
-  static defaultProps = {
-    proxies: []
-  };
+  return (
+    <firstProxy.value
+      nextProxy={firstProxy.next()}
+      fixture={fixture}
+      onComponentRef={onComponentRef}
+      onFixtureUpdate={onFixtureUpdate}
+    />
+  );
+};
 
-  /**
-   * Loader for rendering React components in isolation.
-   *
-   * Renders components using fixtures and Proxy middleware. Initialized via
-   * props.
-   */
-  constructor(props) {
-    super(props);
+Loader.propTypes = {
+  fixture: createModuleType(object).isRequired,
+  proxies: arrayOf(createModuleType(func)),
+  onFixtureUpdate: func,
+  onComponentRef: func
+};
 
-    this.firstProxy = createProxyLinkedList(props.proxies);
-  }
+Loader.defaultProps = {
+  proxies: [],
+  onFixtureUpdate: () => {},
+  onComponentRef: () => {}
+};
 
-  componentWillReceiveProps({ proxies }) {
-    if (proxies !== this.props.proxies) {
-      this.firstProxy = createProxyLinkedList(proxies);
-    }
-  }
-
-  render() {
-    const { firstProxy } = this;
-    const { fixture, onComponentRef, onFixtureUpdate } = this.props;
-
-    return (
-      <firstProxy.value
-        nextProxy={firstProxy.next()}
-        fixture={fixture}
-        onComponentRef={onComponentRef || noope}
-        onFixtureUpdate={onFixtureUpdate || noope}
-      />
-    );
-  }
-}
-
-function createProxyLinkedList(userProxies) {
-  return createLinkedList([...userProxies, PropsProxy]);
-}
-
-function noope() {}
+export { Loader };
