@@ -36,3 +36,15 @@ test('generates location with query string from params', () => {
 
   expect(stringifyParams(params)).toBe('?name=Jack&info=%7B%22age%22%3A25%7D');
 });
+
+test('parses stringified and form encoded params from location', () => {
+  const uriLocation =
+    'mypage.com?formValue=first+middle+last&encodedValue=first%20middle%20last&plusValue=first%2Bmiddle%2Blast';
+  const params = parseLocation(uriLocation);
+
+  expect(params).toEqual({
+    formValue: 'first middle last',
+    encodedValue: 'first middle last',
+    plusValue: 'first+middle+last'
+  });
+});
