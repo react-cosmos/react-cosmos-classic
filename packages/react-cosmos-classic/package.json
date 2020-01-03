@@ -1,6 +1,6 @@
 {
   "name": "react-cosmos-classic",
-  "version": "4.8.4",
+  "version": "4.8.5",
   "description": "CLI for running React Cosmos inside webpack-powered apps",
   "repository": "https://github.com/react-cosmos/react-cosmos-classic/tree/master/packages/react-cosmos-classic",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "object.values": "^1.1.0",
     "react-cosmos-config": "^4.8.2",
     "react-cosmos-loader": "^4.8.4",
-    "react-cosmos-playground": "^4.8.4",
+    "react-cosmos-playground": "^4.8.5",
     "react-cosmos-shared": "^4.8.2",
     "react-cosmos-voyager": "^4.8.2",
     "react-cosmos-voyager2": "^4.8.2",

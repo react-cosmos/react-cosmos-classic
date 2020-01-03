@@ -1,6 +1,6 @@
 {
   "name": "react-cosmos-local-state-example",
-  "version": "4.8.4",
+  "version": "4.8.5",
   "description": "Example of injecting and serializing component local state",
   "repository": "https://github.com/react-cosmos/react-cosmos-classic/tree/master/examples",
   "license": "MIT",
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "async-until": "^1.2.2",
-    "react-cosmos-classic": "^4.8.4",
+    "react-cosmos-classic": "^4.8.5",
     "react-cosmos-test": "^4.8.4"
   },
   "private": true
