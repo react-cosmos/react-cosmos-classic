@@ -18,7 +18,7 @@ export function parseLocation(location) {
   pairs.forEach(pair => {
     parts = pair.split('=');
     [key] = parts;
-    value = decodeURIComponent(parts[1]);
+    value = decodeURIComponent(parts[1].replace(/\+/g, '%20'));
 
     try {
       value = JSON.parse(value);
