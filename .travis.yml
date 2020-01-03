@@ -26,3 +26,7 @@ cache:
   yarn: true
   directories:
     - /home/travis/.cypress/Cypress
+addons:
+  apt:
+    packages:
+      - libgconf-2-4
