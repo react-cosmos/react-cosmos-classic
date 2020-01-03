@@ -62,7 +62,7 @@
     "cpy": "^7.0.1",
     "create-react-class": "^15.6.3",
     "css-loader": "^2.1.0",
-    "cypress": "^3.1.5",
+    "cypress": "^3.8.1",
     "delay": "^4.1.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",

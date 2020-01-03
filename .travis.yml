@@ -25,7 +25,7 @@ script:
 cache:
   yarn: true
   directories:
-    - /home/travis/.cache
+    - /home/travis/.cypress/Cypress
 addons:
   apt:
     packages:
