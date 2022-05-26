@@ -7045,12 +7045,10 @@ eventsource@0.1.6:
   dependencies:
     original ">=0.0.5"
 
-eventsource@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/eventsource/-/eventsource-1.0.7.tgz#8fbc72c93fcd34088090bc0a4e64f4b5cee6d8d0"
-  integrity sha512-4Ln17+vVT0k8aWq+t/bF5arcS3EpT9gYtW66EPacdj/mAFevznsnyoHLPy2BA8gbIQeIHoPsvwmfBftfcG//BQ==
-  dependencies:
-    original "^1.0.0"
+eventsource@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/eventsource/-/eventsource-2.0.2.tgz#76dfcc02930fb2ff339520b6d290da573a9e8508"
+  integrity sha512-IzUmBGPR3+oUG9dUeXynyNmf91/3zUSJg1lCktzKw47OXuhco54U3r9B7O4XX+Rb1Itm9OZ2b0RkTs10bICOxA==
 
 evp_bytestokey@^1.0.0, evp_bytestokey@^1.0.3:
   version "1.0.3"
@@ -8754,7 +8752,7 @@ http-errors@1.6.3, http-errors@~1.6.2, http-errors@~1.6.3:
 
 http-errors@~1.3.1:
   version "1.3.1"
-  resolved "http://registry.npmjs.org/http-errors/-/http-errors-1.3.1.tgz#197e22cdebd4198585e8694ef6786197b91ed942"
+  resolved "https://registry.npmjs.org/http-errors/-/http-errors-1.3.1.tgz#197e22cdebd4198585e8694ef6786197b91ed942"
   integrity sha1-GX4izevUGYWF6GlO9nhhl7ke2UI=
   dependencies:
     inherits "~2.0.1"
@@ -12473,13 +12471,6 @@ original@>=0.0.5:
   integrity sha1-kUf5P6FpbQS+YeAb1QuurKZWvTs=
   dependencies:
     url-parse "1.0.x"
-
-original@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/original/-/original-1.0.1.tgz#b0a53ff42ba997a8c9cd1fb5daaeb42b9d693190"
-  integrity sha512-IEvtB5vM5ULvwnqMxWBLxkS13JIEXbakizMSo3yoPNPCIWzg8TG3Usn/UhXoZFM/m+FuEA20KdzPSFq/0rS+UA==
-  dependencies:
-    url-parse "~1.4.0"
 
 os-browserify@^0.3.0, os-browserify@~0.3.0:
   version "0.3.0"
@@ -16277,14 +16268,6 @@ url-parse@^1.4.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.4.4.tgz#cac1556e95faa0303691fec5cf9d5a1bc34648f8"
   integrity sha512-/92DTTorg4JjktLNLe6GPS2/RvAd/RGr6LuktmWSMLEOa6rjnlrFXNgSbSmkNvCoL2T028A0a1JaJLzRMlFoHg==
-  dependencies:
-    querystringify "^2.0.0"
-    requires-port "^1.0.0"
-
-url-parse@~1.4.0:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.4.1.tgz#4dec9dad3dc8585f862fed461d2e19bbf623df30"
-  integrity sha512-x95Td74QcvICAA0+qERaVkRpTGKyBHHYdwL2LXZm5t/gBtCB9KQSO/0zQgSTYEV1p0WcvSg79TLNPSvd5IDJMQ==
   dependencies:
     querystringify "^2.0.0"
     requires-port "^1.0.0"
